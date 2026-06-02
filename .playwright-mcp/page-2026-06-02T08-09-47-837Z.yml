@@ -1,0 +1,35 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: Logo
+      - generic [ref=e6]:
+        - img "animation"
+      - img [ref=e9]
+    - generic [ref=e11]:
+      - button "Back" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+        - generic [ref=e15]: Back
+      - generic [ref=e16]:
+        - heading "Account Login" [level=1] [ref=e17]
+        - separator [ref=e18]
+        - paragraph [ref=e19]: If you are already a member you can login with your email address and password.
+        - generic [ref=e20]:
+          - generic [ref=e21]:
+            - generic [ref=e22]: Email address
+            - textbox "Email address" [ref=e23]:
+              - /placeholder: sampleuser@email.com
+          - generic [ref=e24]:
+            - generic [ref=e25]: Password
+            - textbox "Password" [ref=e26]:
+              - /placeholder: ••••••••••••••••
+          - generic [ref=e28] [cursor=pointer]:
+            - checkbox [ref=e29]
+            - generic [ref=e30]: Remember me
+          - button "Register Account" [ref=e31] [cursor=pointer]
+        - paragraph [ref=e32]:
+          - text: Dont have an account ?
+          - link "Sign up here" [ref=e33] [cursor=pointer]:
+            - /url: "#"
+  - button "Report a Bug" [ref=e34] [cursor=pointer]:
+    - img [ref=e35]
+    - generic [ref=e38]: Report a Bug

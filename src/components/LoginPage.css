@@ -1,0 +1,356 @@
+/* ── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --color-brand:        #2C73EB;   /* primary blue */
+  --color-brand-dark:   #1565D8;   /* input border blue */
+  --color-white:        #FFFFFF;
+  --color-black:        #000000;
+  --color-text-title:   #000000;
+  --color-text-desc:    #8591A5;
+  --color-text-label:   #696F79;
+  --color-text-input:   #494949;
+  --color-divider:      #F5F5F5;
+  --color-check-green:  #07AD36;
+
+  --font-family:        'Inter', sans-serif;
+  --font-size-title:    30px;
+  --font-size-desc:     18px;
+  --font-size-ui:       16px;
+
+  --input-height:       64px;
+  --input-radius:       6px;
+  --input-width:        426px;
+}
+
+/* ── Google Fonts import ────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Page shell ─────────────────────────────────────────────────────────────── */
+.login-page {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  background: var(--color-white);
+}
+
+/* ── Left panel ─────────────────────────────────────────────────────────────── */
+.login-left-panel {
+  position: relative;
+  flex: 0 0 50%;
+  background-color: var(--color-brand);
+  background-image:
+    radial-gradient(ellipse at 30% 60%, rgba(255,255,255,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 55%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-logo {
+  position: absolute;
+  top: 40px;
+  left: 56px;
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  line-height: 36.3px;
+  color: var(--color-white);
+  letter-spacing: 0;
+}
+
+.login-lottie-wrapper {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.login-lottie-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.login-check-badge {
+  position: absolute;
+  bottom: 130px;
+  right: 56px;
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Right panel ────────────────────────────────────────────────────────────── */
+.login-right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  position: relative;
+  background: var(--color-white);
+}
+
+/* ── Back button ────────────────────────────────────────────────────────────── */
+.login-back-btn {
+  position: absolute;
+  top: 48px;
+  right: 56px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-text-desc);
+  font-family: var(--font-family);
+  font-size: var(--font-size-ui);
+  font-weight: 600;
+  line-height: 19.36px;
+}
+
+.login-back-btn:hover {
+  color: var(--color-brand);
+}
+
+.login-back-btn:hover .login-back-icon path {
+  stroke: var(--color-brand);
+}
+
+/* ── Login box ──────────────────────────────────────────────────────────────── */
+.login-box {
+  width: 100%;
+  max-width: var(--input-width);
+}
+
+.login-title {
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  line-height: 36.3px;
+  color: var(--color-text-title);
+  margin: 0 0 18px;
+  letter-spacing: 0;
+}
+
+.login-divider {
+  border: none;
+  border-top: 1px solid var(--color-divider);
+  margin: 0 0 26px;
+}
+
+.login-description {
+  font-size: var(--font-size-desc);
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--color-text-desc);
+  margin: 0 0 40px;
+  letter-spacing: 0;
+}
+
+/* ── Form ───────────────────────────────────────────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-label {
+  font-size: var(--font-size-ui);
+  font-weight: 500;
+  line-height: 19.36px;
+  color: var(--color-text-label);
+  letter-spacing: 0;
+}
+
+.login-input {
+  width: 100%;
+  height: var(--input-height);
+  border: 1px solid var(--color-brand-dark);
+  border-radius: var(--input-radius);
+  background: var(--color-white);
+  padding: 0 25px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-ui);
+  font-weight: 500;
+  color: var(--color-text-input);
+  box-sizing: border-box;
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.login-input::placeholder {
+  color: var(--color-text-desc);
+  font-weight: 500;
+}
+
+.login-input:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(44, 115, 235, 0.15);
+}
+
+.login-input--error {
+  border-color: #D32F2F;
+}
+
+.login-input--error:focus {
+  border-color: #D32F2F;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+}
+
+.login-field-error {
+  font-size: 13px;
+  font-weight: 500;
+  color: #D32F2F;
+  line-height: 1.4;
+}
+
+/* ── Remember me ────────────────────────────────────────────────────────────── */
+.login-remember-row {
+  display: flex;
+  align-items: center;
+}
+
+.login-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.login-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-brand);
+  border-radius: 4px;
+  background: var(--color-white);
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+  outline: none;
+}
+
+.login-checkbox--checked {
+  background: var(--color-brand);
+}
+
+.login-checkbox:focus-visible {
+  box-shadow: 0 0 0 3px rgba(44, 115, 235, 0.25);
+}
+
+.login-remember-text {
+  font-size: var(--font-size-ui);
+  font-weight: 500;
+  line-height: 19.36px;
+  color: var(--color-text-label);
+}
+
+/* ── Submit button ──────────────────────────────────────────────────────────── */
+.login-submit-btn {
+  width: 100%;
+  height: var(--input-height);
+  border: none;
+  border-radius: var(--input-radius);
+  background: var(--color-brand);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: var(--font-size-ui);
+  font-weight: 500;
+  line-height: 19.36px;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-submit-btn:hover {
+  background: var(--color-brand-dark);
+  box-shadow: 0 4px 14px rgba(44, 115, 235, 0.35);
+}
+
+.login-submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* ── Sign-up prompt ─────────────────────────────────────────────────────────── */
+.login-signup-prompt {
+  margin: 24px 0 0;
+  text-align: center;
+  font-size: var(--font-size-ui);
+  font-weight: 500;
+  line-height: 19.36px;
+  color: var(--color-text-label);
+}
+
+.login-signup-link {
+  color: var(--color-brand);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-signup-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-left-panel {
+    flex: 0 0 220px;
+    min-height: 220px;
+  }
+
+  .login-lottie-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .login-check-badge {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .login-right-panel {
+    padding: 40px 24px 48px;
+  }
+
+  .login-back-btn {
+    top: 20px;
+    right: 24px;
+  }
+
+  .login-box {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-left-panel {
+    flex: 0 0 160px;
+    min-height: 160px;
+  }
+
+  .login-logo {
+    top: 24px;
+    left: 24px;
+    font-size: 22px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-description {
+    font-size: 15px;
+  }
+}
