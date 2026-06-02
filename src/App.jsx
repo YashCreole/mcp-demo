@@ -1,7 +1,7 @@
-import LoginPage from './components/LoginPage'
+import ForgotPasswordPage from './components/ForgotPasswordPage'
 
 function App() {
-  return <LoginPage />
+  return <ForgotPasswordPage />
 }
 
 export default App
